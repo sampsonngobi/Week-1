@@ -44,16 +44,23 @@ def price_estimation():
 print()
 print(f"The appropiate volume is {volume:.2f} liters")
 price_estimation()
+print()
 
 #confirm buying interest
-buy_interest = input("Would you like to purchase a tire(Yes/No): ")
-if buy_interest == "yes":
-    name = input("Please enter your full name: ")
-    contact_info = input("Enter your cell phone number: ")
-    
-    
-else:
-    print("Thank you for using our app. Let us know when you would like to buy a tire")
+while True:
+    buy_interest = input("Would you like to purchase a tire(Yes/No): ")
+    if buy_interest == "yes".lower():
+        name = input("Please enter your full name: ")
+        contact_info = input("Enter your cell phone number: ")
+        break
+        
+        
+    elif buy_interest == "no".lower():
+        print("Thank you for using our app. Let us know when you would like to buy a tire")
+        break
+
+    else:
+        print("Enter a valid value")
 
 #get the current date 
 current_date = datetime.now(tz=None)
